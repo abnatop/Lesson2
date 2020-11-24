@@ -70,5 +70,5 @@ for product_param in product_params:
 
     product_analysis[product_param] = param_result
 
-for i in product_analysis:
-    print(i)
+for param in product_params:
+    print(param, product_analysis[param])
