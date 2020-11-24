@@ -8,3 +8,19 @@
 # Пользователь ввел число 8. Результат: 8, 7, 5, 3, 3, 2.
 # Пользователь ввел число 1. Результат: 7, 5, 3, 3, 2, 1.
 # Набор натуральных чисел можно задать непосредственно в коде, например, my_list = [7, 5, 3, 3, 2].
+
+digit_list = [70, 50, 30, 30, 20]
+
+while True:
+    new_digit = int(input('Введите натуральное число (или 0 для выхода): '))
+    if new_digit == 0:
+        break
+
+    for i in range(len(digit_list)-1, -1, -1):
+        if new_digit <= digit_list[i]:
+            digit_list.insert(i+1, new_digit)
+            break
+    else:
+        digit_list.insert(i, new_digit)
+
+print(f'Итоговый список: {digit_list}')
