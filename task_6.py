@@ -59,35 +59,16 @@ while True:
     database.append(tuple((counter, product_card)))
     counter += 1
 
-# for i in database:
-#     print(i)
+product_analysis = {}
+for product_param in product_params:
+    param_result = []
 
-# product_names = []
-# product_prices = []
-# product_counts = []
-# product_units = []
-#
-# for product in database:
-#
-#     name = product[REC_POS][product_name]
-#     if name not in product_names:
-#         product_names.append(name)
-#
-#     price = product[REC_POS][product_price]
-#     if price not in product_prices:
-#         product_prices.append(price)
-#
-#     count = product[REC_POS][product_count]
-#     if count not in product_counts:
-#         product_counts.append(count)
-#
-#     unit = product[REC_POS][product_unit]
-#     if unit not in product_units:
-#         product_units.append(unit)
-#
-# print(product_names)
-# print(product_prices)
-# print(product_counts)
-# print(product_units)
+    for product in database:
+        key_value = product[REC_POS][product_param]
+        if key_value not in param_result:
+            param_result.append(key_value)
 
+    product_analysis[product_param] = param_result
 
+for i in product_analysis:
+    print(i)
